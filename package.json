@@ -1,0 +1,24 @@
+{
+  "name": "typescript-toy-dom",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "typings": "lib/index",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/slogsdon/typescript-toy-dom.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "docs": "typedoc --out docs src",
+    "format":
+      "prettier --config .prettierrc --write '**/*.ts' '**/*.tsx' '**/*.json'",
+    "test": "tslint --project tsconfig.json"
+  },
+  "devDependencies": {
+    "prettier": "^1.11.1",
+    "tslint": "^5.9.1",
+    "typedoc": "^0.11.0",
+    "typescript": "^2.7.2"
+  }
+}
