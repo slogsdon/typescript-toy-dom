@@ -1,4 +1,4 @@
-import { h, render, renderToString, updateElement } from "../src/";
+import { h, render } from "../src/";
 
 const Thing = () => (
   <div id="test">
