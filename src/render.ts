@@ -1,11 +1,13 @@
 /**
  * Defines various strategies for rendering nodes
+ *
+ * @module typescript-toy-dom/render
  */
 
 /**
  * Define module imports/exports
  */
-import { createElement, NodeLike, updateElement } from "./index";
+import { createElement, NodeLike, updateElement } from "./create-element";
 
 /**
  * The previously rendered node. Used for diffing.

@@ -1,5 +1,7 @@
 /**
  * The JSX pragma helper function
+ *
+ * @module typescript-toy-dom/helper
  */
 
 /**

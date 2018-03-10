@@ -1,4 +1,6 @@
+.rpt2_cache
 docs
+dist
 lib
 node_modules
 yarn-error.log

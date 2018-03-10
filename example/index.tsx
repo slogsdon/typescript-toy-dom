@@ -17,8 +17,8 @@ const Thing2 = () => (
 // initial creation
 render(<Thing />, "#root");
 
-// delayed update
-setTimeout(() => render(<Thing2 />, "#root"), 1500);
+// update
+render(<Thing2 />, "#root");
 
-// delayed update without specified target
-setTimeout(() => render(<Thing />), 3000);
+// update without specified target
+render(<Thing />);

@@ -3,7 +3,8 @@
     "module": "es6",
     "noImplicitAny": true,
     "sourceMap": true,
-    "outDir": "./lib"
+    "outDir": "./lib",
+    "declaration": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
