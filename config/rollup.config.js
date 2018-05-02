@@ -19,14 +19,14 @@ const config = {
       check: false,
       tsConfigOverride: { compilerOptions },
     }),
-  ]
+  ],
 };
 
 export default [
   Object.assign({}, config),
   Object.assign({}, config, {
     output: Object.assign({}, config.output, {
-      file: outputFile.replace('.js', '.min.js'),
+      file: outputFile.replace(".js", ".min.js"),
     }),
     plugins: [
       typescript({

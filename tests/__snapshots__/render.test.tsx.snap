@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render functions should render Element 1`] = `
+<div>
+  <div>
+    hello
+  </div>
+</div>
+`;
+
+exports[`render functions should render Element 2`] = `
+<div>
+  <div>
+    goodbye
+  </div>
+</div>
+`;
+
+exports[
+  `render functions should render Element with removed children during update 1`
+] = `
+<div>
+  <div>
+    hello
+  </div>
+</div>
+`;
+
+exports[
+  `render functions should render Element with removed children during update 2`
+] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`render functions should render nothing when empty 1`] = `<div />`;
+
+exports[`render functions should render nothing when empty 2`] = `<div />`;
+
+exports[`render renders to a target element by reference 1`] = `
+<div>
+  hello
+</div>
+`;
+
+exports[`render renders to a target element by selector 1`] = `
+<body>
+  hello
+</body>
+`;
+
+exports[`render strings should render Text 1`] = `
+<div>
+  hello
+</div>
+`;
+
+exports[`render strings should render Text 2`] = `
+<div>
+  goodbye
+</div>
+`;
+
+exports[
+  `renderToStaticMarkup functions should render Element 1`
+] = `"<div>hello</div>"`;
+
+exports[
+  `renderToStaticMarkup functions should render nothing when empty 1`
+] = `""`;
+
+exports[`renderToStaticMarkup strings should render Text 1`] = `"hello"`;

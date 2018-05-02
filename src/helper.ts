@@ -7,7 +7,7 @@
 /**
  * Define module imports/exports
  */
-import { INode, IProps, NodeLike, NodeType } from "./index";
+import { INode, IProps, NodeLike, NodeType } from "./types";
 
 /**
  * JSX pragma helper

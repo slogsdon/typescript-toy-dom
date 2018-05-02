@@ -7,7 +7,9 @@
 /**
  * Define module imports/exports
  */
-import { createElement, NodeLike, updateElement } from "./create-element";
+import { createElement } from "./create-element";
+import { NodeLike } from "./types";
+import { updateElement } from "./update-element";
 
 /**
  * The previously rendered node. Used for diffing.
@@ -72,5 +74,5 @@ export function renderToStaticMarkup(node: NodeLike) {
     return el.wholeText;
   }
 
-  return el.outerHTML;
+  return el ? el.outerHTML : "";
 }

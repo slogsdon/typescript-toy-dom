@@ -13,22 +13,40 @@
   },
   "files": ["dist", "lib", "LICENSE", "README.md"],
   "scripts": {
-    "build": "tsc && rollup --config rollup.config.js",
-    "clean": "rm -rf .rpt2_cache dist lib",
+    "build": "tsc && rollup --config config/rollup.config.js",
+    "clean": "rm -rf .rpt2_cache coverage dist docs lib",
     "docs": "typedoc --out docs src",
     "format":
-      "prettier --config .prettierrc --write '**/*.ts' '**/*.tsx' '**/*.json'",
-    "prepublish": "npm run clean && npm run build",
-    "test": "tslint --project tsconfig.json"
+      "prettier --config config/.prettierrc --write '*.json' '*.md' 'config/**/*' 'src/**/*' 'tests/**/*'",
+    "prepare": "yarn run clean && yarn build",
+    "test": "tslint --project tsconfig.json && jest",
+    "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
   },
   "devDependencies": {
-    "prettier": "^1.11.1",
+    "@types/jest": "^22.2.3",
+    "jest": "^22.4.3",
+    "prettier": "^1.12.1",
     "rollup": "^0.56.5",
     "rollup-plugin-typescript2": "^0.12.0",
     "rollup-plugin-uglify": "^3.0.0",
+    "ts-jest": "^22.4.4",
     "tslint": "^5.9.1",
-    "typedoc": "^0.11.0",
+    "typedoc": "^0.11.1",
     "typedoc-plugin-external-module-name": "^1.1.1",
-    "typescript": "^2.7.2"
+    "typescript": "^2.8.3"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "config/tsconfig.jest.json"
+      }
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": ["src/**/*"],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/tests/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
 }
