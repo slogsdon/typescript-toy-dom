@@ -37,8 +37,10 @@ let previousTarget: Element;
  *               parent. If a `string` is used, the value should
  *               be an appropriate CSS selector compatible with
  *               `document.querySelector`.
+ * @param clearExisting React style element insertion is desired,
+ *                      so remove existing children in the target.
  */
-export function render(node: NodeLike, target?: string | Element) {
+export function render(node: NodeLike, target?: string | Element, clearExisting = true) {
   if (typeof target === "string") {
     target = document.querySelector(target);
   }
@@ -49,9 +51,7 @@ export function render(node: NodeLike, target?: string | Element) {
     throw new Error("Missing/null render target");
   }
 
-  // react style element insertion is desired, so remove
-  // existing children in the target
-  while (!previousNode && target.firstChild) {
+  while (clearExisting && !previousNode && target.firstChild) {
     target.removeChild(target.firstChild);
   }
 
