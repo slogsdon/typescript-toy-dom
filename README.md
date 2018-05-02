@@ -1,5 +1,7 @@
 # typescript-toy-dom
 
+[![Build Status](https://travis-ci.org/slogsdon/typescript-toy-dom.svg?branch=master)](https://travis-ci.org/slogsdon/typescript-toy-dom)
+
 An educational look into virtual DOM libraries. Written in TypeScript.
 
 ## LICENSE
