@@ -1,0 +1,10 @@
+.rpt2_cache/
+config
+!dist/
+!lib/
+node_modules/
+src/
+tests/
+.travis.yml
+tsconfig.json
+tslint.json
