@@ -18,7 +18,7 @@
     "docs": "typedoc --out docs src",
     "format":
       "prettier --config config/.prettierrc --write '*.json' '*.md' 'config/**/*' 'src/**/*' 'tests/**/*'",
-    "prepare": "yarn run clean && yarn build",
+    "prepare": "$npm_execpath run clean && $npm_execpath run build",
     "test": "tslint --project tsconfig.json && jest",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
   },
