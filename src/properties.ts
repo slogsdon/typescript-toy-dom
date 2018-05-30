@@ -95,6 +95,10 @@ export function setProp(el: Element, name: string, value: PropValue) {
  * @param props The property set.
  */
 export function setProps(el: Element, props: IProps) {
+  if (!props) {
+    return [];
+  }
+
   return Object.keys(props).map((name) => setProp(el, name, props[name]));
 }
 

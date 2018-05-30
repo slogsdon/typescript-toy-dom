@@ -43,3 +43,16 @@ export interface INode {
   props: IProps;
   type: NodeType;
 }
+
+/**
+ * A stateless component
+ */
+export class StatelessComponent<P> {
+  public props: P;
+  public constructor(props: P) {
+    this.props = props;
+  }
+  public render(): NodeLike {
+    return undefined;
+  }
+}

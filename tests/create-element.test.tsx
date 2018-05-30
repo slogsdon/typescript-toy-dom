@@ -1,5 +1,6 @@
 import { createElement } from "../src/create-element";
 import { h } from "../src/helper";
+import { IProps, StatelessComponent } from "../src/types";
 
 describe("strings", () => {
   it("should return Text", () => {
@@ -21,6 +22,21 @@ describe("functions", () => {
     const result = createElement(<Fn>hello</Fn>);
 
     expect(Fn).toHaveBeenCalled();
+    expect(result).toBeInstanceOf(Element);
+    expect(result.childNodes).toHaveLength(1);
+    expect(result.firstChild).toBeInstanceOf(Text);
+  });
+});
+
+describe("classes", () => {
+  it("should return Element", () => {
+    class Component extends StatelessComponent<IProps> {
+      public render() {
+        return <div>{this.props.children}</div>;
+      }
+    }
+    const result = createElement(<Component>hello</Component>);
+
     expect(result).toBeInstanceOf(Element);
     expect(result.childNodes).toHaveLength(1);
     expect(result.firstChild).toBeInstanceOf(Text);

@@ -8,7 +8,7 @@
  * Define module imports/exports
  */
 import { setProps } from "./properties";
-import { NodeLike } from "./types";
+import { IProps, NodeLike, StatelessComponent } from "./types";
 
 /**
  * Creates a raw DOM node from a `node`.
@@ -31,8 +31,21 @@ export function createElement(node?: NodeLike): Text | Element {
   // allow functions as elements
   if (typeof node.type === "function") {
     node.props.children = node.children;
-    const ret = node.type(node.props);
-    return createElement(ret);
+
+    let component: NodeLike;
+    const result = Reflect.construct(node.type, [node.props]);
+
+    if (result instanceof StatelessComponent) {
+      component = result.render();
+    } else {
+      component = result;
+    }
+
+    return createElement(component);
+  }
+
+  if (!node.type) {
+    return;
   }
 
   // create DOM element
