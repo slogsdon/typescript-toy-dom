@@ -25,3 +25,10 @@ export function h(
 ): INode {
   return { children, props: props || {}, type };
 }
+
+/**
+ * Alias of h
+ *
+ * @see h
+ */
+export const createElement = h;
